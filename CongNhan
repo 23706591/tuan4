@@ -1,0 +1,80 @@
+package tuan;
+
+public class CongNhan {
+	//thuoc tinh
+	private String maCN, mHo, mTen;
+	private int mSoSP, soSP;
+	private double donGia;
+	
+	//dong goi
+	public String getMaCN() {
+		return maCN;
+	}
+	public void setMaCN(String maCN) {
+		this.maCN = maCN;
+	}
+	public String getmHo() {
+		return mHo;
+	}
+	public void setmHo(String mHo) {
+		this.mHo = mHo;
+	}
+	public String getmTen() {
+		return mTen;
+	}
+	public void setmTen(String mTen) {
+		this.mTen = mTen;
+	}
+	public int getmSoSP() {
+		return mSoSP;
+	}
+	public void setmSoSP(int mSoSP) {
+		this.mSoSP = mSoSP;
+	}
+	public int getSoSP() {
+		return soSP;
+	}
+	public void setSoSP(int soSP) {
+		this.soSP = soSP;
+	}
+	public double getDonGia() {
+		return donGia;
+	}
+	public void setDonGia(double donGia) {
+		this.donGia = donGia;
+	}
+	
+	//tao ham tao
+	public CongNhan(String maCN, String mHo, String mTen, int mSoSP, int soSP, double donGia) {
+		super();
+		this.maCN = maCN;
+		this.mHo = mHo;
+		this.mTen = mTen;
+		this.mSoSP = mSoSP;
+		this.soSP = soSP;
+		this.donGia = donGia;
+	}
+	//phuong thuc
+	
+	public double tinhLuong() {
+		double donGia = 0;
+		if(soSP >= 1 && soSP < 200) {
+			donGia = 0.5;
+		}else if (soSP >= 200 && soSP < 400) {
+			donGia = 0.55;
+		}else if (soSP >= 400 && soSP < 600) {
+			donGia = 0.6;
+		}else if (soSP > 600) {
+			donGia = 0.65;
+		}
+		return soSP * donGia;
+	}
+	//toString
+	@Override
+	public String toString() {
+		return  "Ma Cong Nhan: " + maCN + "\n" +
+	               "Ho: " + mHo + "\n" +
+	               "Ten: " + mTen + "\n" +
+	               "So san pham: " + mSoSP;
+	}
+}
